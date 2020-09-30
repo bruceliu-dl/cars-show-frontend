@@ -1,0 +1,65 @@
+.modal {
+    /* detach from rest of the document */
+    position: fixed;
+    display: block;
+
+    /* center */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    /* ensure in front of rest of page -- increase as needed */
+    z-index: 1001;
+
+    /* visual illusion of being in front -- alter to taste */
+    box-shadow: rgba(0,0,0,0.4) 10px 10px 4px;
+
+    /* visual illusion of being a solid object -- alter to taste */
+    background-color: lightgrey;
+    border: 1px solid black;
+
+    /* visual preference of don't crowd the contents -- alter to taste */
+    padding: 10px;
+
+    width: 50%;
+    height: 80%;
+}
+
+.overlay {
+    /* detach from document */
+    position: fixed;
+
+    /* ensure in front of rest of page except modal */
+    z-index: 1000;
+
+    /* fill screen to catch mice */
+    top: 0;
+    left: 0;
+    width: 9999px;
+    height: 9999px;
+
+    /* dim screen 20% -- alter to taste */
+    opacity: 0.2;
+    background-color: black;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+
+    div label {
+        width: 150px;;
+        text-align: right;
+        padding-right: 10px;
+    }
+}
+
+.footer-btn {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: center;
+}

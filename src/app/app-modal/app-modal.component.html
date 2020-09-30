@@ -1,0 +1,38 @@
+<div class="modal">
+    <div class="content-container">
+        <div>
+            <label for="id">ID:</label>
+            <input disabled type="text" name="id" [(ngModel)]="carData.id" />
+        </div>
+
+        <div>
+            <label for="brand">BRAND:</label>
+            <input type="text" name="brand" [(ngModel)]="carData.brand" />
+        </div>
+
+        <div>
+            <label for="market-time">MARKET TIME:</label>
+            <input type="text" name="market-time" [(ngModel)]="carData.year" />
+        </div>
+
+        <div>
+            <label for="maker">MAKER:</label>
+            <input type="text" name="maker" [(ngModel)]="carData.maker" />
+        </div>
+
+        <div>
+            <label for="made-year">MADE YEAR:</label>
+            <input type="text" name="made-year" [(ngModel)]="carData.makerYear" />
+        </div>
+
+        <div>
+            <label for="price">PRICE:</label>
+            <input type="text" name="made-year" [(ngModel)]="carData.price" />
+        </div>
+    </div>
+    <div class="footer-btn">
+        <button style="margin-right: 20px;" type="button" (click)="ok(carData)">OK</button>
+        <button type="button" (click)="cancel()">Cancel</button>
+    </div>
+</div>
+<div class="overlay"></div>
