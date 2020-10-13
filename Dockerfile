@@ -1,10 +1,8 @@
-FROM node:13.3.0 AS compile-image
-
-RUN npm install -g yarn
+FROM node:latest AS compile-image
 
 WORKDIR /opt/ng
 COPY package.json ./
-RUN yarn install
+RUN npm install
 
 ENV PATH="./node_modules/.bin:$PATH" 
 
