@@ -1,11 +1,14 @@
-FROM node:latest AS builder
+FROM node:latest AS compile-image
 
-WORKDIR /usr/src/app
-
-COPY . .
+WORKDIR /opt/ng
+COPY package.json ./
 RUN npm install
+
+ENV PATH="./node_modules/.bin:$PATH" 
+
+COPY . ./
 RUN ng build --prod
 
-FROM nginx:1.17
-COPY --from=builder /usr/src/app/dist/app-name /usr/share/nginx/html
-COPY ./nginx-angular.conf /etc/nginx/conf.d/default.conf
+FROM nginx
+COPY docker/nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY --from=compile-image /opt/ng/dist/app-name /usr/share/nginx/html
