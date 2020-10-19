@@ -3,7 +3,7 @@ import { Observable, of, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Cars } from '../interface/cars.interface';
-
+import * as env from '../../environments/environment';
 
 @Injectable({
     providedIn: 'root'
@@ -13,7 +13,7 @@ export class ViewCarsService {
     apiHost: string;
     
     constructor(private _http: HttpClient) {
-        this.apiHost = "http://localhost:3000";
+        this.apiHost = env.environment.apiHost;
     }
 
     //get all cars

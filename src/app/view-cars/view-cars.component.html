@@ -1,7 +1,7 @@
 <div class="cars-title">
     <h2>Cars Show</h2>
 </div>
-<div class="view-cars-container">
+<div *ngIf="columnName.length>0" class="view-cars-container">
     <table class="table table-striped">
         <tbody>
             <th *ngFor="let headerName of tableRowHeader">
@@ -14,10 +14,10 @@
                     {{carsInfor[columnName]}}
                 </td>
                 <td>
-                    <a (click)="removeCar(carsInfor)" href="javascript:void(0)">delete</a>
+                    <a id="cars-del" (click)="removeCar(carsInfor)" href="javascript:void(0)">delete</a>
                 </td>
                 <td>
-                    <a (click)="showModalPopup(carsInfor)" href="javascript:void(0)">update</a>
+                    <a id="cars-upt" (click)="showModalPopup(carsInfor)" href="javascript:void(0)">update</a>
                 </td>
             </tr>
         </tbody>
@@ -27,7 +27,5 @@
     
     <div class="footer-btn">
         <input (click)="setNewCarId()" class="btn btn-success" type="button" name="add" value="Add New Car">
-        <!-- <input style="margin: 0 10px;" class="btn btn-primary" type="button" name="confirm" value="Confirm"/>
-        <input class="btn btn-info" type="button" name="cancel" value="Cancel"> -->
     </div>
 </div>
